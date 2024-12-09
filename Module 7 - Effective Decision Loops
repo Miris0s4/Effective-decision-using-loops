@@ -1,0 +1,13 @@
+START
+  DECLARE cumulativeSum = 0
+  DECLARE number
+  WHILE True
+    PRINT "Enter a number (or 0 to stop):"
+    INPUT number
+    IF number == 0
+      BREAK
+    END IF
+    cumulativeSum = cumulativeSum + number
+  END WHILE
+  PRINT "Total sum of all entered numbers is ", cumulativeSum
+END
