@@ -1,0 +1,21 @@
+START
+  DECLARE yearsUntilRetirement, annualSavings, totalSavings
+  DECLARE retirementYears = 0
+  DECLARE annualSpending = 60000
+  PRINT "Enter the number of years until retirement:"
+  INPUT yearsUntilRetirement
+  PRINT "Enter the annual amount you can save:"
+  INPUT annualSavings
+  totalSavings = 0
+  FOR i FROM 1 TO yearsUntilRetirement
+    totalSavings = totalSavings + annualSavings
+    totalSavings = totalSavings + (totalSavings * 0.03)
+  END FOR
+  WHILE retirementYears < 30 AND totalSavings > 0
+    PRINT "Savings at the start of year ", retirementYears + 1, " is $", totalSavings
+    interestEarned = totalSavings * 0.03
+    totalSavings = totalSavings - annualSpending + interestEarned
+    retirementYears = retirementYears + 1
+  END WHILE
+  PRINT "Total savings needed based on spending $60,000 per year is $", totalSavings
+END
